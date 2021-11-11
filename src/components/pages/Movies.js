@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
+import MovieContainer from './MovieContainer';
 
 // import "../../global.css";
 
@@ -52,7 +53,8 @@ export default function Movie() {
         <Box>
           <Grid container xs={12} className={gridContent}>
             <div xs className={content}>
-              <span className={initials}>MOVIES</span>
+              <span className={initials}>Movies
+              <MovieContainer /></span>
             </div>
           </Grid>
         </Box>
