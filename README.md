@@ -2,7 +2,7 @@
 
 [Repository Link](https://github.com/ElusiveSkies/movie-search)
 
-[Deployed Link](https://ElusiveSkies.github.io/movie-search/))
+[Deployed Link](https://ElusiveSkies.github.io/movie-search/)
 
 ## Table of Contents
 
