@@ -35,9 +35,10 @@ const useStyles = makeStyles((theme) => ({
     color: "black",
   },
   cardScore: {
-    fontSize: "1rem",
+    fontSize: "1.75rem",
+    alignContent: "center !important",
     textAlign: "center",
-    alignContent: "cemter",
+    alignSelf: "center",
   }
 }));
 
@@ -65,10 +66,10 @@ function MovieList(props) {
                 {movies.overview}
               </Typography>
             </CardContent>
-            <CardActions className={cardScore}>
+            <Card className={cardScore}>
 
               Score: {movies.vote_average}
-            </CardActions>
+            </Card>
           </Card>
         </Grid>
       ))}

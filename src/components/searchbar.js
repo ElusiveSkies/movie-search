@@ -68,6 +68,8 @@ const useStyles = makeStyles((theme) => ({
 export default function SearchAppBar(props) {
   const { searchStyle, header } = useStyles();
 
+
+
   return (
     <Box sx={{ flexGrow: 1 }} >
       <AppBar elevation={0} position="static" className={searchStyle}>
@@ -82,6 +84,7 @@ export default function SearchAppBar(props) {
               inputProps={{ 'aria-label': 'search' }}
               onClick={props.handleFormSubmit}
               onChange={props.handleInputChange}
+              onKeyDown={props.handleKeypress}
             />
           </Search>
         </Toolbar>

@@ -44,16 +44,23 @@ export default function MovieContainer() {
 
   const handleInputChange = (e) => setSearch(e.target.value);
 
+  const handleKeypress = (e) => {
+    if (e.keyCode === 13) {
+      handleFormSubmit(e)
+    }
+  };
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
     searchMovie(search);
   };
 
   return (
     <div><SearchAppBar
       handleFormSubmit={handleFormSubmit}
-      handleInputChange={handleInputChange} />
+      handleInputChange={handleInputChange}
+      handleKeypress={handleKeypress} 
+      />
       <div className={content}>
         {result.length ? <MovieList result={result} /> : <h2 className={noResults}>No results were found.<br /> Please try searching for something else to watch!</h2>}    
       </div>
