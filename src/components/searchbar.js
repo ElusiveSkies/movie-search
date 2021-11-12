@@ -1,14 +1,12 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import { Container, makeStyles } from "@material-ui/core";
-import { Button } from '@material-ui/core';
-import API from '../utils/API';
+import { makeStyles } from "@material-ui/core";
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -66,27 +64,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SearchAppBar() {
+export default function SearchAppBar(props) {
   const { searchStyle } = useStyles();
-
-
-  const [result, setResult] = useState({});
-  const [search, setSearch] = useState('');
-
-  const searchMovie = (query) =>
-    API.search(query)
-      .then((res) => setResult(res.data))
-      .catch((err) => console.log(err));
-
-  const handleInputChange = (e) => setSearch(e.target.value);
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    searchMovie(search);
-  };
-
-  // const handleClick = (e) => console.log('this is:', e.target.value);
-  
 
   return (
     <Box sx={{ flexGrow: 1 }} >
@@ -99,9 +78,8 @@ export default function SearchAppBar() {
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
-              // onClick={handleClick}
-              onClick={handleFormSubmit}
-              onChange={handleInputChange}
+              onClick={props.handleFormSubmit}
+              onChange={props.handleInputChange}
             />
           </Search>
         </Toolbar>
