@@ -32,17 +32,12 @@ export default function MovieContainer() {
       .then((res) => setResult(res.data.results))
       .catch((err) => console.log(err));
 
-  // When the component loads, use the API.search method to render a default search result
-  // The empty optional array [] will cause the hook to only run one time after the component loads
-  // Refer to https://reactjs.org/docs/hooks-effect.html#tip-optimizing-performance-by-skipping-effects
   useEffect(() => {
     searchMovie('The Matrix');
   }, []);
 
-  // Handler for input changes to the search form
   const handleInputChange = (e) => setSearch(e.target.value);
 
-  // Handler for what happens when the search form is submitted
   const handleFormSubmit = (e) => {
     e.preventDefault();
     console.log(e.target.value);
@@ -54,7 +49,7 @@ export default function MovieContainer() {
       handleFormSubmit={handleFormSubmit}
       handleInputChange={handleInputChange} />
       <div className={content}>
-        {result ? <MovieList result={result} /> : null}    
+        {result.length ? <MovieList result={result} /> : <h2>No results were found</h2>}    
       </div>
       <Footer />
     </div>
