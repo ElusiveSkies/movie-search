@@ -49,36 +49,12 @@ export default function MovieContainer() {
     searchMovie(search);
   };
 
-  //   Destructure the result object to make the code more readable, assign them to empty strings to start
-  // const {
-  //   Title = '',
-  //   Poster = '',
-  //   Director = '',
-  //   Genre = '',
-  //   Released = '',
-  // } = result;
-
-  const damovie = console.log(result);
-
-
   return (
     <div><SearchAppBar
       handleFormSubmit={handleFormSubmit}
       handleInputChange={handleInputChange} />
       <div className={content}>
-        {/* {Title ? (
-          <MovieDetails
-            title={Title}
-            src={Poster}
-            director={Director}
-            genre={Genre}
-            released={Released}
-          />
-        ) : (
-          <h3>No Results to Display</h3>
-        )} */}
-        {result ? <MovieList result={result} /> : null}
-        
+        {result ? <MovieList result={result} /> : null}    
       </div>
       <Footer />
     </div>
