@@ -3,12 +3,10 @@ import { useState, useEffect } from 'react';
 import { makeStyles } from "@material-ui/core";
 
 import API from '../utils/API';
-import MovieDetails from './pages/MovieDetails';
 import MovieList from './pages/MovieList';
 
 import SearchAppBar from './searchbar';
 import Footer from "./Footer";
-import { textAlign } from '@mui/system';
 
 const contentStyles = makeStyles((theme) => ({
   content: {
