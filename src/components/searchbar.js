@@ -50,29 +50,36 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const useStyles = makeStyles((theme) => ({
-  searchStyle: {
+  navStyle: {
     backgroundColor: "black !important",
     color: "white",
     fill: "white",
     padding: "20px 0px",
     width: "100%",
+    "@media (max-width: 900px)": {
+      display: "block !important",
+    },
   },
   header: {
     fontSize: "5rem",
     display: "flex",
     padding: "0px 50px",
     textShadow: "3px 2px 5px gray",
-  }
+     "@media (max-width: 900px)": {
+      fontSize: "2.5rem",
+      paddingBottom: "15px",
+    },
+  },
 }));
 
 export default function SearchAppBar(props) {
-  const { searchStyle, header } = useStyles();
+  const { navStyle, header } = useStyles();
 
 
 
   return (
     <Box sx={{ flexGrow: 1 }} >
-      <AppBar elevation={0} position="static" className={searchStyle}>
+      <AppBar elevation={0} position="static" className={navStyle}>
         <Toolbar>
         <div className={header} boxShadow>What to Watch</div>
           <Search>

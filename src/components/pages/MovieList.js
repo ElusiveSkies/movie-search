@@ -27,8 +27,11 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
   },
   cardRelease: {
-    fontSize: "0.8rem",
+    fontSize: "1.5rem !important",
     textAlign: "center",
+    "@media (max-width: 900px)": {
+      fontSize: "1rem !important",
+    },
   },
   cardDesc: {
     fontSize: "0.75rem",
@@ -39,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
     alignContent: "center !important",
     textAlign: "center",
     alignSelf: "center",
+    paddingBottom: "10px",
   }
 }));
 

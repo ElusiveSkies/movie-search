@@ -1,13 +1,19 @@
 body {
-    background-color: white;
-    font-family: "Playfair Display", serif !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0px;
-    background-color: #c2c2c2;
+  background-color: white;
+  font-family: "Playfair Display", serif !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0px;
+  background-color: #c2c2c2;
 }
 
 .css-1t29gy6-MuiToolbar-root {
-    justify-content: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .css-1t29gy6-MuiToolbar-root {
+    display: block !important;
+  }
 }
