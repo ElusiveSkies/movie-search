@@ -47,7 +47,6 @@ export default function MovieContainer() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     console.log(e.target.value);
-    this.setValue('')
     searchMovie(search);
   };
 

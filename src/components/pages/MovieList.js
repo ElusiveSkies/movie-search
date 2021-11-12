@@ -12,10 +12,6 @@ import { makeStyles } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   cardContainer: {
     width: "100%",
-    // marginTop: "36px",
-    // [theme.breakpoints.down('sm')]: {
-    //   paddingTop: "10px",
-    // },
   },
   movieCard: {
     color: "white",
