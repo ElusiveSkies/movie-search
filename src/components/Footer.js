@@ -3,6 +3,7 @@ import React from "react";
 import Link from "@mui/material/Link";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
+import Image from 'material-ui-image';
 
 import "../global.css";
 

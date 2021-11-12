@@ -42,7 +42,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     transition: theme.transitions.create('width'),
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      // width: '12ch',
       '&:focus': {
         width: '20ch',
       },
@@ -57,7 +56,6 @@ const useStyles = makeStyles((theme) => ({
     fill: "white",
     padding: "20px 0px",
     width: "100%",
-    justifyContent:"space-evenly",
   },
   header: {
     fontSize: "5rem",
