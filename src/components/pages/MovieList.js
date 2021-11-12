@@ -7,44 +7,78 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import { makeStyles } from "@material-ui/core";
 
-// In our return method, we use the map method to return a new array of `li` and `img` elements that are specific to each search result
+const useStyles = makeStyles((theme) => ({
+  cardContainer: {
+    width: "100%",
+    // marginTop: "36px",
+    // [theme.breakpoints.down('sm')]: {
+    //   paddingTop: "10px",
+    // },
+  },
+  movieCard: {
+    color: "white",
+    fill: "white",
+    borderRadius: "10px !important",
+    margin: "40px !important",
+    height: "fit-content"
+  },
+  cardTitle: {
+    fontSize: "2rem !important",
+    textAlign: "center",
+    backgroundColor: "black",
+    color: "white",
+  },
+  cardRelease: {
+    fontSize: "0.8rem",
+    textAlign: "center",
+  },
+  cardDesc: {
+    fontSize: "0.75rem",
+    color: "black",
+  },
+  cardScore: {
+    fontSize: "1rem",
+    textAlign: "center",
+    alignContent: "cemter",
+  }
+}));
+
 function MovieList(props) {
-  console.log(props.result);
-  // props.result.map((movies) => console.log(movies.poster_path))
+  const { cardContainer, movieCard, cardTitle, cardRelease, cardDesc, cardScore } = useStyles();
 
   return (
-    <Container>
-      <Grid container>
+    <Grid container className={cardContainer} boxShadow={4}>
       {props.result.map((movies) => (
-        <Grid item className="list-group-item" key={movies.id}>
-          <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        height="300"
-        image={"https://image.tmdb.org/t/p/original/"+movies.poster_path}
-        alt={movies.title}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {movies.title} <div>({movies.release_date})</div>
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {movies.overview}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        
-        <Button size="small">Share</Button>
-      </CardActions>
-    </Card>
+        <Grid xs={12} md={4} lg={2} className={movieCard} boxShadow={10} key={movies.id}>
+          <Card>
+            <Typography className={cardTitle} gutterBottom variant="h5" component="div">
+              {movies.title}
+            </Typography>
+            <CardMedia
+              component="img"
+              image={"https://image.tmdb.org/t/p/original/" + movies.poster_path}
+              alt={movies.title}
+            />
+            <CardContent>
+              <Typography className={cardRelease} gutterBottom variant="h5" component="div">
+                Release Date: ({movies.release_date})
+              </Typography>
+              <Typography className={cardDesc} >
+                {movies.overview}
+              </Typography>
+            </CardContent>
+            <CardActions className={cardScore}>
 
+              Score: {movies.vote_average}
+            </CardActions>
+          </Card>
         </Grid>
-))}
-  </Grid>
-    </Container>
-  
-    ); 
+      ))}
+    </Grid>
+
+  );
 }
 
 export default MovieList;

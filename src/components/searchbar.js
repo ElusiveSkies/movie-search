@@ -56,21 +56,25 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     fill: "white",
     padding: "20px 0px",
-    // marginTop: "36px",
     width: "100%",
-    // [theme.breakpoints.down('sm')]: {
-    //   paddingTop: "10px",
-    // },
+    justifyContent:"space-evenly",
   },
+  header: {
+    fontSize: "5rem",
+    display: "flex",
+    padding: "0px 50px",
+    textShadow: "3px 2px 5px gray",
+  }
 }));
 
 export default function SearchAppBar(props) {
-  const { searchStyle } = useStyles();
+  const { searchStyle, header } = useStyles();
 
   return (
     <Box sx={{ flexGrow: 1 }} >
       <AppBar elevation={0} position="static" className={searchStyle}>
         <Toolbar>
+        <div className={header} boxShadow>What to Watch</div>
           <Search>
             <SearchIconWrapper>
                 <SearchIcon />
