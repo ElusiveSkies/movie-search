@@ -13,7 +13,13 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-    .css-1t29gy6-MuiToolbar-root {
+  .css-1t29gy6-MuiToolbar-root {
     display: block !important;
   }
 }
+
+@media only screen and (max-width: 600px) {
+    .css-191lty2 {
+      display: block !important;
+    }
+  }
